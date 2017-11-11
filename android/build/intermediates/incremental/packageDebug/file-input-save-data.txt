@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Nov 11 16:11:49 BRT 2017
+#Sat Nov 11 16:24:24 BRT 2017
 25.file=/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar/com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl
 25.base=/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar
 22.set=ASSET
