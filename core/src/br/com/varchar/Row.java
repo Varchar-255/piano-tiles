@@ -3,6 +3,7 @@ package br.com.varchar;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
+import static br.com.varchar.Cons.currentVel;
 import static br.com.varchar.Cons.tileHeight;
 import static br.com.varchar.Cons.tileWidth;
 import static br.com.varchar.Cons.verde;
@@ -32,6 +33,10 @@ public class Row {
         for (int i = 0; i < 3; i++) {
             shapeRenderer.rect(i * tileWidth, y, tileWidth, tileHeight);
         }
+    }
+
+    public void update(float deltaTime) {
+        y -= deltaTime * currentVel;
     }
 
 }

@@ -19,4 +19,8 @@ public class Cons {
 
     public static int tileHeight = screenY / 4;
 
+    public static float initialVel = 2 * tileHeight / 1f;
+
+    public static float currentVel = 0;
+
 }
