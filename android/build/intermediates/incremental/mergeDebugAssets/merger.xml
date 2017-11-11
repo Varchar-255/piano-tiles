@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/josevieira/Documents/github/games/piano-tiles/android/assets"><file name="badlogic.jpg" path="/Users/josevieira/Documents/github/games/piano-tiles/android/assets/badlogic.jpg"/></source><source path="/Users/josevieira/Documents/github/games/piano-tiles/android/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/josevieira/Documents/github/games/piano-tiles/android/src/debug/assets"/></dataSet></merger>

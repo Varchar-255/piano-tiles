@@ -11,6 +11,10 @@ public class Cons {
 
     public static Color verde = new Color(0, 0.4f, 0, 1);
 
+    public static Color correct = new Color(0.655f, 0.988f, 0.604f, 1);
+
+    public static Color wrong = new Color(0.71f, 0.282f, 0.302f, 1);
+
     public static int screenX = Gdx.graphics.getWidth();
 
     public static int screenY = Gdx.graphics.getHeight();

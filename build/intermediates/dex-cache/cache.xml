@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/josevieira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype/1.9.7/aa953bdba7adc9c8f301274ddc797705460565ab/gdx-freetype-1.9.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="aa953bdba7adc9c8f301274ddc797705460565ab">
+        <dex dex="/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/pre-dexed/debug/gdx-freetype-1.9.7_8dd09887960116c6df0b2487284d4892dfcf515b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josevieira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.7/8a021ba0bb6555c25dfc272697d379215aa05ed1/gdx-1.9.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8a021ba0bb6555c25dfc272697d379215aa05ed1">
+        <dex dex="/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/pre-dexed/debug/gdx-1.9.7_e412f22efffee44cf6b94635bff3ee2c2aa09df3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josevieira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.7/884a964d5a09643269390bdc4d30fc7bf8b0b9eb/gdx-backend-android-1.9.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="884a964d5a09643269390bdc4d30fc7bf8b0b9eb">
+        <dex dex="/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.7_228013d9b2548117ee7684de5236fe005d3b229b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josevieira/Documents/github/games/piano-tiles/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="46c47c9f5c6416cce979842159c2287c6244baf9">
+        <dex dex="/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/pre-dexed/debug/core-1.0_09ac04407e7098d088150c3e597e996d6c194165.jar" />
+    </item>
+
+</items>
