@@ -34,7 +34,7 @@
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
-        sha1="46c47c9f5c6416cce979842159c2287c6244baf9">
+        sha1="77528990394e13cd0b73747fd445e853109e42fe">
         <dex dex="/Users/josevieira/Documents/github/games/piano-tiles/android/build/intermediates/pre-dexed/debug/core-1.0_09ac04407e7098d088150c3e597e996d6c194165.jar" />
     </item>
 

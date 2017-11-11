@@ -2,7 +2,13 @@ package br.com.varchar;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Array;
 
@@ -10,6 +16,7 @@ import java.util.Random;
 
 import static br.com.varchar.Cons.currentVel;
 import static br.com.varchar.Cons.initialVel;
+import static br.com.varchar.Cons.screenX;
 import static br.com.varchar.Cons.screenY;
 import static br.com.varchar.Cons.tileHeight;
 
@@ -29,13 +36,48 @@ public class MainClass extends ApplicationAdapter {
 
 	private int state;
 
+	private SpriteBatch spriteBatch;
+
+	private Texture texture;
+
+	private Piano piano;
+
+	private BitmapFont font;
+
+	private GlyphLayout glyphLayout;
+
 	@Override
 	public void create () {
 		shapeRenderer = new ShapeRenderer();
+		spriteBatch = new SpriteBatch();
+		piano = new Piano("natal");
+		glyphLayout = new GlyphLayout();
+
+		setupFont();
+
+		texture = new Texture("iniciar.png");
 		shapeRenderer.setAutoShapeType(true);
 		rows = new Array<Row>();
 		random = new Random();
 		initGame();
+	}
+
+	private void setupFont() {
+		FreeTypeFontGenerator.setMaxTextureSize(2048);
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
+
+		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+		parameter.size = (int)(0.1f*screenX);
+		parameter.color = Color.CYAN;
+
+		font = generator.generateFont(parameter);
+		generator.dispose();
+	}
+
+	private float getWidth(BitmapFont font, String text) {
+		glyphLayout.reset();
+		glyphLayout.setText(font, text);
+		return glyphLayout.width;
 	}
 
 	@Override
@@ -47,13 +89,26 @@ public class MainClass extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+		// ROWS
 		shapeRenderer.begin();
-
 		for (Row row : rows) {
 			row.draw(shapeRenderer);
 		}
-
 		shapeRenderer.end();
+
+		// GUI
+		spriteBatch.begin();
+
+		if (state == 0) spriteBatch.draw(texture, 0, tileHeight/4, screenX, tileHeight/2);
+
+		font.draw(spriteBatch, String.valueOf(score), 0, screenY);
+
+		String fontVel = String.format("%.3f", currentVel/tileHeight);
+
+		font.draw(spriteBatch, fontVel , screenX - getWidth(font, fontVel), screenY);
+
+		spriteBatch.end();
+
 	}
 
 	private void input() {
@@ -73,6 +128,7 @@ public class MainClass extends ApplicationAdapter {
 						if (returnValue == 1 && i == indexInfTiles) {
 							score++;
 							indexInfTiles++;
+							//piano.play();
 						} else if (returnValue == 1) {
 							rows.get(indexInfTiles).error();
 							finish(0);
@@ -144,11 +200,16 @@ public class MainClass extends ApplicationAdapter {
 		addRow();
 		addRow();
 		addRow();
+
+		piano.reset();
 	}
 
 	@Override
 	public void dispose () {
 		shapeRenderer.dispose();
+		spriteBatch.dispose();
+		texture.dispose();
+		piano.dispose();
 	}
 
 }
